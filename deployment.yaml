@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pythonweb
+  labels:
+    app: pythonweb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pythonweb
+  template:
+    metadata:
+      labels:
+        app: pythonweb
+    spec:
+      containers:
+      - name: pythonweb
+        image: nithikjoseph/bdaapchel:v2  # Replace with your actual image
+        ports:
+        - containerPort: 5070
